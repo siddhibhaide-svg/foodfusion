@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodFusion | Smart Food Ordering</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="home">
+
+<!-- header, footer, cart drawer and popups are added by script.js -->
+
+<section class="hero" id="home">
+    <div class="hero-inner">
+        <div class="hero-copy">
+            <h1>Taste the world,<br>one bite at a time.</h1>
+            <p>Order from six cuisines, spot what's trending and get suggestions that learn from what you eat.</p>
+
+            <form class="hero-search" onsubmit="location.href='menu.html?q='+encodeURIComponent(document.getElementById('heroQ').value.trim());return false;">
+                <input id="heroQ" type="search" placeholder="Search biryani, ramen, tacos…" aria-label="Search dishes">
+                <button type="submit">Search</button>
+            </form>
+            <div class="hero-chips" id="heroChips"></div>
+
+            <div class="hero-stats">
+                <div><strong id="statDishes">0</strong><span>Dishes</span></div>
+                <div><strong id="statCuisines">0</strong><span>Cuisines</span></div>
+                <div><strong id="statRating">0</strong><span>Average rating</span></div>
+            </div>
+        </div>
+        <div class="collage" id="collage"></div>
+    </div>
+</section>
+
+<section class="section" id="cuisines">
+    <div class="section-title">
+        <h2>Choose your cuisine</h2>
+        <span>Tap a cuisine to open its full menu.</span>
+    </div>
+    <div class="cuisine-grid" id="cuisineGrid"></div>
+</section>
+
+<section class="section-band" id="trending">
+    <div class="section">
+        <div class="section-title">
+            <h2>Trending right now</h2>
+            <span>The dishes food lovers are ordering today.</span>
+        </div>
+        <div class="dish-grid" id="trendingGrid"></div>
+        <p class="center"><a class="btn-ghost" href="menu.html">See the full menu</a></p>
+    </div>
+</section>
+
+<section class="section" id="combos">
+    <div class="section-title">
+        <h2>Perfect food combos</h2>
+        <span>More food, better price.</span>
+    </div>
+    <div class="combo-grid" id="comboGrid"></div>
+</section>
+
+<section class="coupon-section">
+    <div class="coupon-text">
+        <h2>Your first order deserves something special.</h2>
+        <p>Get 30% off your first order. Apply the code in your cart.</p>
+    </div>
+    <div class="coupon-box">
+        <div><small>Coupon code</small><strong>FIRST30</strong></div>
+        <button onclick="copyCoupon()">Copy code</button>
+    </div>
+</section>
+
+<section class="section" id="recommendations">
+    <div class="section-title">
+        <h2>Made for you</h2>
+        <span id="recWhy"></span>
+    </div>
+    <div class="dish-grid four" id="recGrid"></div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

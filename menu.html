@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | FoodFusion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="menu">
+
+<section class="menu-hero">
+    <div class="menu-hero-img imgbox" id="menuHeroImg"></div>
+    <div class="menu-hero-inner">
+        <h1 id="menuTitle">Menu</h1>
+        <p id="menuBlurb"></p>
+    </div>
+</section>
+
+<main class="menu-wrap">
+    <div class="tabs" id="tabs"></div>
+    <div class="chips" id="cats"></div>
+
+    <div class="toolbar">
+        <input id="q" type="search" class="text-input" placeholder="Search dishes" aria-label="Search dishes">
+        <label class="toggle"><input type="checkbox" id="vegOnly"> Veg only</label>
+        <select id="sort" class="text-input" aria-label="Sort dishes">
+            <option value="popular">Sort: Top rated</option>
+            <option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option>
+        </select>
+    </div>
+
+    <p class="count" id="count"></p>
+    <div class="dish-grid four" id="grid"></div>
+    <div class="empty" id="empty" hidden>
+        <h3>No dishes match</h3>
+        <p>Try a different word, switch cuisine or category, or turn off the veg filter.</p>
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
